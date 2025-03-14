@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AdnanServiceService } from '../service/adnan-service.service';
 
 @Component({
   selector: 'app-category',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './category.component.css'
 })
 export class CategoryComponent {
+  constructor(private _url: AdnanServiceService) { }
+
+  ngOnInit() { this.get(); }
+
+  categoryid: any;
+
+  get() {
+
+    this._url.getCategory().subscribe((data) => {
+      this.categoryid = data;
+    });
+  }
 
 }

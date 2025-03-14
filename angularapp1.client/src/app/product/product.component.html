@@ -1,8 +1,17 @@
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+<h1>  products </h1>
+
+<div style="display: flex; justify-content: space-evenly;">
+  <div *ngFor="let item of productid">
+    <!-- Changed from dataProduct to productid -->
+    <div class="card text-white bg-success mb-3" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{ item.id }}</h5>
+        <p class="card-text">{{ item.name }}</p>
+        <!--<a style="color: antiquewhite" [routerLink]="['/productDetails', item.id]">details</a>-->
+        <a [routerLink]="['/product', item.id]">Get Product</a>
+      </div>
+    </div>
   </div>
 </div>
+
+

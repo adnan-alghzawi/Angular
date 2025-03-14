@@ -1,26 +1,35 @@
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    
-      <a class="btn btn-primary" aria-current="page" routerLink="/product">product</a>
-    
+<!--<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of categoryid">
+      <th scope="row">1</th>
+      <td></td>
+
+      <td></td>
+      <td><a routerLink="/product/">get product</a></td>
+    </tr>
+  </tbody>
+</table>-->
+
+<h1 class="text-center mb-4">Products</h1>
+
+<div class="d-flex justify-content-around flex-wrap">
+  <div *ngFor="let item of categoryid" class="card bg-success text-white mb-3" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{ item.id }}</h5>
+      <p class="card-text">{{ item.name }}</p>
+      <!--<a class="btn btn-light btn-sm" [routerLink]="['/product', item.id]">Get Product</a>-->
+      <a [routerLink]="['/product', item.id]">Get Product</a>
+    </div>
   </div>
 </div>
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a class="btn btn-primary" aria-current="page" routerLink="/product">product</a>
-  </div>
-</div>
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a class="btn btn-primary" aria-current="page" routerLink="/product">product</a>
-  </div>
-</div>
+
+
+
